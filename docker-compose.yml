@@ -1,0 +1,34 @@
+version: "3.5"
+services:
+  db:
+    image: "postgis"
+    container_name: postgis
+    build:
+      context: ./
+      dockerfile: ./docker/postgis/Dockerfile
+    volumes:
+      - ./data:/data:ro
+      - pgdata:/var/lib/postgresql
+    ports:
+      - 5433:5432
+    networks:
+      - linzgeocodenet
+  geocoder:
+    image: "linzgeocode"
+    container_name: linzgeocode
+    build:
+      context: ./
+      dockerfile: ./docker/linzgeocode/Dockerfile
+    volumes:
+      - ./conf:/app/conf
+    ports:
+      - 9001:9001
+    tty: true
+    networks:
+      - linzgeocodenet
+    depends_on:
+      - db
+volumes:
+  pgdata:
+networks:
+  linzgeocodenet:
