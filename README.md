@@ -2,6 +2,8 @@
 
 This repository contains a basic geocoding service for [LINZ addresses](https://data.linz.govt.nz/layer/105689-nz-addresses/).  That is, we accept address strings as input, and return address coordinates if a matching address is found in the LINZ address database.
 
+Note that it makes use of pre-trained neural network to parse address components.  This is described [here](https://github.com/cmhh/linzaddressparse).
+
 # Getting Started
 
 The library is provided as an [sbt](https://www.scala-sbt.org/) project.  A fat jar can be made simply by running:
