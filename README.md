@@ -136,7 +136,7 @@ Once running, a GET endpoint is available at `/linzgeocode/geocode`, and it take
 * `text` - address string, e.g. `1 Gonville Street, Tawa, Wellington 5028`
 * `detailed` - whether or not the individual LINZ components should be returned, or just the location.
 
-It is up to users to encode the URL correctly if required--for example, cURL requires this.  Note that many place names in New Zealand are M&#0101;ori words so the vowels with macrons are very common.  
+It is up to users to encode the URL correctly if required--for example, cURL requires this.  Note that many place names in New Zealand are M&#x0101;ori words so the vowels with macrons are very common.  
 
 letter   | encoding
 ---------|----------
